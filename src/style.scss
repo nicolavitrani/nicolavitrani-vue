@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+// Custom colors
+$theme-colors: (
+  "primary": rgb(90, 118, 187),
+  "secondary": #4dd9ca,
+  "third": #E8B63A,
+  "success" : #52aa70,
+  "danger" : #b74444,
+  "marrone": #6b3e31,
+  "warning": #ffc107,
+  "info": #055160,
+  "gray" : #737373
+);
+
+@import 'bootstrap/scss/bootstrap';
+
+body {
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  background: #000000 radial-gradient(ellipse at center, rgb(51, 51, 77), black);
+  // background-image: url('/public/img/sfondostellato-HD.jpg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(7px);
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.canvas-container {
+  cursor: grab;
+}
+
+.min-vh-70 {
+  min-height: 70vh;
+}
