@@ -16,13 +16,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-primary" aria-current="page" to="/">Home</router-link>
+                  <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-secondary" aria-current="page" to="/">Home</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-primary" aria-current="page" to="/about">Chi sono</router-link>
+                  <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-secondary" aria-current="page" to="/about">Chi sono</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-primary" aria-current="page" to="/work">Esperienze</router-link>
+                  <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-secondary" aria-current="page" to="/work">Esperienze</router-link>
                 </li>
                 <li class="nav-item me-lg-4">
                   <a class="nav-link text-uppercase text-center" aria-current="page">Contatti</a>

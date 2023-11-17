@@ -129,3 +129,15 @@ body {
 .navbar {
   transition: top 0.3s;
 }
+
+.nav-link {
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
