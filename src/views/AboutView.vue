@@ -1,26 +1,26 @@
 <template>
-  <div style="margin-top: 100px"></div>
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-6 text-center mt-5">
-        <h1 class="fw-bold">
-          <span class="p-2 border-bottom border-3 border-primary">Chi sono</span>
-        </h1>
+  <div class="container-fluid min-vh-100 mt-5">
+    <div class="row justify-content-center align-items-center position-relative">
+      <div class="col-12 canvas-container d-flex align-items-center">
+        <Home3DComponent></Home3DComponent>
       </div>
-    </div>
-    <div class="row justify-content-center align-items-center my-5">
-      <div class="col-12 col-md-6 px-3">
-        <p>
-          Sono uno sviluppatore web full-stack con una solida esperienza nel settore, grazie alle opportunità che ho avuto di lavorare per aziende leader nel settore dei servizi professionali, dove ho acquisito competenze preziose e ho avuto l’opportunità di lavorare con clienti di grande importanza.
-        </p>
-        <p>
-          Sono sempre alla ricerca di nuove sfide e opportunità per migliorare ulteriormente le mie competenze e la mia esperienza. Sono aperto a opportunità di lavoro in cui posso contribuire, imparare e crescere.
-        </p>
-        <div class="col-12 text-center my-5">
-          <img src="/img/nicola-memoji.png" alt="Memoji di Nicola" class="img-fluid" style="height: 160px">
-        </div>
-        <div class="text-center">
-          <a class="btn btn-primary mt-3 fw-bold text-uppercase text-white" href="/contact">Contatti</a>
+      <div class="row position-absolute align-items-center justify-content-center">
+        <div class="col-12 col-md-6 text-center mt-5">
+          <h1 class="fw-bold" data-aos="fade-down">
+            <span class="p-2">☕️ Chi sono</span>
+          </h1>
+          <p class="mt-5" data-aos="fade-up">
+            Sono uno sviluppatore web full-stack con una solida esperienza nel settore, grazie alle opportunità che ho avuto di lavorare per aziende leader nel settore dei servizi professionali, dove ho acquisito competenze preziose e ho avuto l’opportunità di lavorare con clienti di grande importanza.
+          </p>
+          <p data-aos="fade-up">
+            Sono sempre alla ricerca di nuove sfide e opportunità per migliorare ulteriormente le mie competenze e la mia esperienza. Sono aperto a opportunità di lavoro in cui posso contribuire, imparare e crescere.
+          </p>
+          <div class="col-12 text-center my-5" data-aos="fade-down">
+            <img src="/img/nicola-memoji.png" alt="Memoji di Nicola" class="img-fluid" style="height: 160px">
+          </div>
+          <div class="text-center">
+            <a class="btn btn-primary mt-3 fw-bold text-uppercase text-white" data-aos="fade-up" href="/contact">Contatti</a>
+          </div>
         </div>
       </div>
     </div>
@@ -28,14 +28,14 @@
   <div class="container-fluid bg-black my-5 py-5">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6 text-center mt-5">
-        <h1 class="fw-bold">
-          <span class="p-2 border-bottom border-3 border-secondary">Le mie skills</span>
+        <h1 class="fw-bold" data-aos="fade-up">
+          <span class="p-2">Le mie skills</span>
         </h1>
       </div>
     </div>
     <div class="row justify-content-center align-items-center my-5">
       <div class="col-12 col-md-6 px-3">
-        <p>
+        <p data-aos="fade-down">
           Nel corso degli anni, ho sviluppato la conoscenza delle tecnologie backend come <strong class="text-secondary">PHP</strong>, <strong class="text-secondary">Laravel</strong> e <strong class="text-secondary">Java</strong>, così come delle tecnologie frontend come <strong class="text-secondary">Vue.js</strong> e <strong class="text-secondary">React.js</strong>. Questa combinazione di competenze mi permette di creare soluzioni complete e di alta qualità per i miei clienti.
         </p>
       </div>
@@ -60,6 +60,7 @@
   </div>
 </template>
 <script setup>
+import Home3DComponent from "@/components/Home3DComponent.vue";
 </script>
 
 <style scoped>

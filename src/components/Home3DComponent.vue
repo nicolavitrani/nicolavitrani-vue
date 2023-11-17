@@ -5,7 +5,7 @@
 <script>
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 export default {
 
   data() {
@@ -28,7 +28,7 @@ export default {
     container.appendChild(canvas);
 
     const loader = new GLTFLoader()
-    const modelPath = '/img/3d-obj/earth.glb'
+    const modelPath = '/img/3d-obj/Asteroid.glb'
 
     loader.load(modelPath, (gltf) => {
       const model = gltf.scene
@@ -56,21 +56,19 @@ export default {
       // scene.add(spotLight);
 
       if (window.innerWidth <= 768) { // Se la larghezza della viewport è inferiore o uguale a 768px (tablet e mobile)
-        camera.position.z = 220;
+        camera.position.z = 20;
       } else { // Se la larghezza della viewport è superiore a 768px (desktop)
-        camera.position.z = 100;
+        camera.position.z = 20;
 
-        // controllo con il mouse
-        const controls = new OrbitControls(camera, renderer.domElement);
-        // controls.minDistance = 3;
-        // controls.maxDistance = 5;
-        controls.update();
+        // // controllo con il mouse
+        // const controls = new OrbitControls(camera, renderer.domElement);
+        // // controls.minDistance = 3;
+        // // controls.maxDistance = 5;
+        // controls.update();
       }
 
-      camera.position.x = 2
-      camera.position.y = 2
-
-
+      camera.position.x = 1
+      camera.position.y = 6
 
       const animateModelRotation = () => {
         // Ruota il modello di un piccolo angolo ad ogni frame

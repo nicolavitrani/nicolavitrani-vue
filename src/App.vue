@@ -1,14 +1,17 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-0">
     <div class="row align-items-center min-vh-100">
       <div class="col-12">
-        <nav id="navbar" class="navbar navbar-expand-lg p-3 fixed-top" :class="{ 'navbar-light' : isLight, 'navbar-dark' : !isLight }">
+        <div v-show="fixNavbar" style="height: 122px"></div>
+        <nav id="navbar" class="navbar navbar-expand-lg p-3" :class="{ 'navbar-light' : isLight, 'navbar-dark' : !isLight, 'fixed-top' : fixNavbar, 'hided' : hideNavbar }">
           <div class="container-fluid">
             <router-link @click="closeNavbar" class="navbar-brand" to="/">
               <img src="/img/logo/logo.png" alt="Logo ufficiale di Nicola Vitrani" class="img-fluid p-2" style="height: 80px"><span class="text-uppercase fw-bold ms-2">Nicola Vitrani</span>
             </router-link>
-            <button id="navbar-toggler" class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button id="navbar-toggler" class="navbar-toggler border-0 rounded-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toggler-icon top-bar"></span>
+              <span class="toggler-icon middle-bar"></span>
+              <span class="toggler-icon bottom-bar"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -35,8 +38,8 @@
         </nav>
 
         <router-view/>
-        <button v-show="showScrollButton" @click="scrollToTop" id="scrollButton" class="btn btn-lg btn-secondary"><font-awesome-icon :icon="['fas', 'caret-up']" /></button>
-        <footer class="mt-5 mb-3">
+        <button @click="scrollToTop" id="scrollButton" class="btn btn-lg btn-secondary" :class="{'disappear' : !showScrollButton}"><font-awesome-icon :icon="['fas', 'caret-up']" /></button>
+        <footer class="my-5">
           <div class="container">
             <div class="row justify-content-center align-items-center">
               <div class="col-12 text-center text-gray">
@@ -55,7 +58,9 @@ export default {
   data() {
     return {
       isLight: false,
-      showScrollButton: false
+      showScrollButton: false,
+      fixNavbar: false,
+      hideNavbar: false
     }
   },
   mounted() {
@@ -80,7 +85,9 @@ export default {
       }
     },
     checkScroll() {
-      this.showScrollButton = window.pageYOffset > 150;
+      this.showScrollButton = window.pageYOffset > 200;
+      this.fixNavbar = window.pageYOffset > 200;
+      this.hideNavbar = window.pageYOffset < 220 && window.pageYOffset > 122;
     },
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -101,9 +108,32 @@ export default {
 </script>
 
 <style scoped>
+@keyframes bounce {
+  0% { transform: translateY(100vh); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes disappear {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(100vh); }
+}
+
 #scrollButton {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  animation: bounce 1s ease;
+  transition: 0.4s;
+}
+
+#scrollButton:hover {
+  transform: scale(125%);
+  transition: 0.4s;
+}
+
+#scrollButton.disappear {
+  animation: disappear 1s ease forwards;
 }
 </style>
