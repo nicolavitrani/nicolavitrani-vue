@@ -28,7 +28,7 @@ export default {
     container.appendChild(canvas);
 
     const loader = new GLTFLoader()
-    const modelPath = '/img/3d-obj/MacBook Pro.glb'
+    const modelPath = '/img/3d-obj/earth.glb'
 
     loader.load(modelPath, (gltf) => {
       const model = gltf.scene
@@ -56,21 +56,21 @@ export default {
       // scene.add(spotLight);
 
       if (window.innerWidth <= 768) { // Se la larghezza della viewport è inferiore o uguale a 768px (tablet e mobile)
-        camera.position.z = 10;
-        console.log("mobile view camera position", camera.position);
+        camera.position.z = 220;
       } else { // Se la larghezza della viewport è superiore a 768px (desktop)
-        camera.position.z = 1.5;
-        console.log("desktop view camera position", camera.position);
+        camera.position.z = 100;
+
+        // controllo con il mouse
+        const controls = new OrbitControls(camera, renderer.domElement);
+        // controls.minDistance = 3;
+        // controls.maxDistance = 5;
+        controls.update();
       }
 
       camera.position.x = 2
       camera.position.y = 2
 
-      // controllo con il mouse
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.minDistance = 3;
-      controls.maxDistance = 5;
-      controls.update();
+
 
       const animateModelRotation = () => {
         // Ruota il modello di un piccolo angolo ad ogni frame
