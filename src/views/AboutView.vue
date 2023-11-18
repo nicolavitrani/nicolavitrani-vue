@@ -1,15 +1,15 @@
 <template>
-  <div class="container-fluid min-vh-100 mt-5">
+  <div class="container-fluid min-vh-100 mt-5 p-0">
     <div class="row justify-content-center align-items-center position-relative">
       <div class="col-12 canvas-container d-flex align-items-center">
         <Home3DComponent></Home3DComponent>
       </div>
-      <div class="row position-absolute align-items-center justify-content-center">
+      <div class="row position-absolute align-items-center justify-content-center mt-5">
         <div class="col-12 col-md-6 text-center mt-5">
           <h1 class="fw-bold" data-aos="fade-down">
             <span class="p-2">☕️ Chi sono</span>
           </h1>
-          <p class="mt-5" data-aos="fade-up">
+          <p class="mt-5">
             Sono uno sviluppatore web full-stack con una solida esperienza nel settore, grazie alle opportunità che ho avuto di lavorare per aziende leader nel settore dei servizi professionali, dove ho acquisito competenze preziose e ho avuto l’opportunità di lavorare con clienti di grande importanza.
           </p>
           <p data-aos="fade-up">

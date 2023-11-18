@@ -1,11 +1,11 @@
 <template>
-  <div class="container-fluid min-vh-100 mt-5">
-    <div class="" style="margin-top: 200px"></div>
-    <div class="row justify-content-center align-items-center position-relative">
+  <div class="container-fluid min-vh-100 mt-5 p-0">
+    <div class="" style="margin-top: 250px"></div>
+    <div class="row justify-content-center align-items-center position-relative mt-5">
       <div class="col-12 canvas-container d-flex align-items-center">
         <Home3DComponent></Home3DComponent>
       </div>
-      <div class="row position-absolute align-items-center justify-content-center mt-5 min-vh-100">
+      <div class="row position-absolute align-items-center justify-content-center my-5 min-vh-100">
         <div class="col-12 col-md-10 col-lg-8 text-center mt-5">
           <h1 class="fw-bold" data-aos="fade-down">
             <span class="p-2">💬 Lasciami un messaggio</span>

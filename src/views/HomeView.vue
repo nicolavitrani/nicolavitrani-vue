@@ -4,7 +4,7 @@
       <div class="col-12 canvas-container d-flex align-items-center">
         <Home3DComponent></Home3DComponent>
       </div>
-      <div class="row position-absolute align-items-center justify-content-center">
+      <div class="row position-absolute align-items-center justify-content-center mt-5">
         <div class="col-12 col-lg-6 p-3 rounded-5">
           <div class="row align-items-center">
             <!--          <div class="d-none d-md-block col-4">-->

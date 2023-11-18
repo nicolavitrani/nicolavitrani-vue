@@ -1,10 +1,10 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-0">
     <div class="row justify-content-center align-items-center position-relative">
       <div class="col-12 canvas-container d-flex align-items-center">
         <Home3DComponent></Home3DComponent>
       </div>
-      <div class="row position-absolute align-items-center justify-content-center">
+      <div class="row position-absolute align-items-center justify-content-center mt-5">
         <div class="col-12 text-center">
           <div class="col-12">
             <h1 class="fw-bold" data-aos="fade-down">
@@ -27,10 +27,10 @@
     </div>
   </div>
   <div class="container-fluid my-5 py-5 bg-black">
-    <div class="col-12 text-center my-5">
+    <div class="col-12 text-center mb-5">
       <div class="row align-items-center justify-content-between mb-5">
         <div class="col-12 col-md-4 text-center">
-          <img src="/img/logo/deloitte-logo.png" alt="Logo ufficiale di Deloitte" class="img-fluid" style="height: 120px">
+          <img src="/img/logo/deloitte-logo-light.png" alt="Logo ufficiale di Deloitte" class="img-fluid bg-white p-3 rounded mb-3" style="height: 120px">
         </div>
         <div class="col-12 col-md-7 text-start px-3" data-aos="fade-down">
           <h2 class="fw-bold mb-2">Deloitte</h2>
