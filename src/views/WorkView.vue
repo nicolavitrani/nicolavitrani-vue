@@ -11,7 +11,7 @@
               <span class="p-2">🎯 Le mie esperienze</span>
             </h1>
           </div>
-          <div class="col-12 col-md-8 mt-5 mx-auto" data-aos="fade-up">
+          <div class="col-12 col-md-8 col-lg-6 mt-5 mx-auto" data-aos="fade-up">
             <p>
               Nel corso della mia carriera, ho avuto l’opportunità di lavorare in diversi settori. Ho iniziato come sviluppatore <strong class="text-primary">freelance</strong>, un ruolo che mi ha permesso di affinare le mie competenze tecniche e di lavorare su una varietà di progetti.
             </p>
