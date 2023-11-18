@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid min-vh-100 mt-5">
-    <div style="margin-top: 200px"></div>
+    <div class="d-md-none" style="margin-top: 200px"></div>
     <div class="row justify-content-center align-items-center position-relative">
       <div class="col-12 canvas-container d-flex align-items-center">
         <Home3DComponent></Home3DComponent>

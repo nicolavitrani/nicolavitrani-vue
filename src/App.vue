@@ -36,7 +36,7 @@
             </div>
           </div>
         </nav>
-
+        <div class="d-md-none" style="margin-top: 20px"></div>
         <router-view/>
         <button @click="scrollToTop" id="scrollButton" class="btn btn-lg btn-secondary" :class="{'disappear' : !showScrollButton}"><font-awesome-icon :icon="['fas', 'caret-up']" /></button>
         <footer class="my-5">
