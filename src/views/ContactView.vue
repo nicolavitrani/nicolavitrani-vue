@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid min-vh-100 mt-5">
-    <div style="margin-top: 150px"></div>
+    <div style="margin-top: 200px"></div>
     <div class="row justify-content-center align-items-center position-relative">
       <div class="col-12 canvas-container d-flex align-items-center">
         <Home3DComponent></Home3DComponent>
@@ -13,7 +13,7 @@
           <p class="mt-5" data-aos="fade-up">
             Compila il form e ti risponderò il prima possibile
           </p>
-          <div class="col-12 text-center my-5" data-aos="fade-down">
+          <div class="col-12 text-center my-5">
             <img src="/img/contact-memoji%20.PNG" alt="Memoji di Nicola" class="img-fluid" style="height: 160px">
           </div>
           <div class="col-12 col-md-8 col-lg-5 my-5 mx-auto">
