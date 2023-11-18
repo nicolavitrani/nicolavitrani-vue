@@ -19,6 +19,9 @@
               Successivamente, ho lavorato nel settore dell’<strong class="text-primary">automazione industriale</strong>, dove ho potuto applicare le mie competenze in un contesto diverso e stimolante. Attualmente, lavoro come ingegnere del software in una delle aziende leader nel settore dei <strong class="text-primary">servizi professionali</strong>.
             </p>
           </div>
+          <div class="col-12 text-center my-5" data-aos="fade-down">
+            <img src="/img/experience-memoji.png" alt="Memoji di Nicola" class="img-fluid" style="height: 160px">
+          </div>
         </div>
       </div>
     </div>

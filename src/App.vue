@@ -24,8 +24,8 @@
                 <li class="nav-item">
                   <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-secondary" aria-current="page" to="/work">Esperienze</router-link>
                 </li>
-                <li class="nav-item me-lg-4">
-                  <a class="nav-link text-uppercase text-center" aria-current="page">Contatti</a>
+                <li class="nav-item">
+                  <router-link @click="closeNavbar" class="nav-link text-uppercase text-center" active-class="text-secondary" aria-current="page" to="/contact">Contatti</router-link>
                 </li>
                 <li v-on:click="setLight" class="nav-item my-auto d-none" style="cursor: pointer">
                   <div class="text-center my-auto fs-4">
