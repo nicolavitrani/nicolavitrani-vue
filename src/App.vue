@@ -42,7 +42,7 @@
           <div class="container">
             <div class="row justify-content-center align-items-center">
               <div class="col-12 text-center text-gray">
-                © Nicola Vitrani | 2023 | 2.0.1
+                © 2023 | Nicola Vitrani | nicolavitrani93@gmail.com
               </div>
             </div>
           </div>

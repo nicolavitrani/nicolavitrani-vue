@@ -20,7 +20,7 @@
             <form @submit.prevent="sendMessage" class="text-start">
               <div class="mb-3">
                 <label for="inputName" class="form-label">Nome o azienda</label>
-                <input type="text" class="form-control bg-dark text-white" id="inputName">
+                <input type="text" class="form-control bg-dark text-white" id="inputName" required>
               </div>
               <div class="mb-3">
                 <label for="inputEmail" class="form-label">Email</label>
@@ -29,10 +29,10 @@
               </div>
               <div class="mb-3">
                 <label for="inputName" class="form-label">Messaggio</label>
-                <textarea name="text" id="text" rows="10" class="form-control bg-dark text-white"></textarea>
+                <textarea name="text" id="text" rows="10" class="form-control bg-dark text-white" required></textarea>
               </div>
               <div class="mb-5 form-check">
-                <input type="checkbox" class="form-check-input" id="privacy">
+                <input type="checkbox" class="form-check-input" id="privacy" required>
                 <label class="form-check-label" for="privacy">
                   Acconsento al trattamento dei dati
                 </label>
