@@ -99,6 +99,7 @@ export default {
         message: this.message,
         date: new Date().toISOString()
       }
+      console.log("message to send", postData);
       axios.post('https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages.json', postData)
           .then(response => {
             console.log(response.data)
