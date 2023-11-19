@@ -20,16 +20,16 @@
             <form @submit.prevent="sendMessage" class="text-start">
               <div class="mb-3">
                 <label for="inputName" class="form-label">Nome o azienda</label>
-                <input type="text" class="form-control bg-dark text-white" id="inputName" required>
+                <input v-model="name" type="text" class="form-control bg-dark text-white" id="inputName" required>
               </div>
               <div class="mb-3">
                 <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control bg-dark text-white" id="inputEmail" aria-describedby="emailHelp">
+                <input v-model="email" type="email" class="form-control bg-dark text-white" id="inputEmail" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text text-white">Non condividerò nè salvero la tua email</div>
               </div>
               <div class="mb-3">
                 <label for="inputName" class="form-label">Messaggio</label>
-                <textarea name="text" id="text" rows="10" class="form-control bg-dark text-white" required></textarea>
+                <textarea v-model="message" name="text" id="text" rows="10" class="form-control bg-dark text-white" required></textarea>
               </div>
               <div class="mb-5 form-check">
                 <input type="checkbox" class="form-check-input" id="privacy" required>
@@ -81,11 +81,37 @@
 import Home3DComponent from "@/components/Home3DComponent.vue";
 </script>
 <script>
+import axios from "axios";
+
 export default {
+  data() {
+    return {
+      name: "",
+      email: "",
+      message: ""
+    }
+  },
   methods: {
     sendMessage: function () {
-      alert('Grazie, ti risponderò a breve!')
-      console.log("messaggio inviato");
+      let postData = {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+        date: new Date().toISOString()
+      }
+      axios.post('https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages.json', postData)
+          .then(response => {
+            console.log(response.data)
+            alert('Grazie, ti risponderò a breve!')
+
+            this.name = "";
+            this.email = "";
+            this.message = "";
+          })
+          .catch(error => {
+            console.log(error)
+            alert('Errore nella richiesta!')
+          })
     }
   }
 }

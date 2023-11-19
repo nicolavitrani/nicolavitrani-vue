@@ -42,7 +42,7 @@
           <div class="container">
             <div class="row justify-content-center align-items-center">
               <div class="col-12 text-center text-gray">
-                © 2023 | Nicola Vitrani | nicolavitrani93@gmail.com
+                © 2023 | Nicola Vitrani | nicolavitrani93@gmail.com <router-link @click="closeNavbar" aria-current="page" to="/admin"><span class="ms-3"><font-awesome-icon :icon="['fas', 'fingerprint']" /></span></router-link>
               </div>
             </div>
           </div>

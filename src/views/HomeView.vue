@@ -11,8 +11,8 @@
             <!--            <img src="/img/lamp.png" alt="Lampada da ufficio" class="img-fluid" style="min-height: 170px;">-->
             <!--          </div>-->
             <div class="col text-center">
-              <h1 class="fw-bold" data-aos="fade-down">🚀 Web Developer</h1>
-              <p class="mt-3" data-aos="fade-up">Dedico la mia competenza e creatività a trasformare idee in realtà digitale, <br>offrendo soluzioni web su misura</p>
+              <h1 class="fw-bold">🚀 Web Developer</h1>
+              <p class="mt-3">Dedico la mia competenza e creatività a trasformare idee in realtà digitale, <br>offrendo soluzioni web su misura</p>
               <a class="btn btn-lg btn-primary mt-4 me-2 text-uppercase text-white fw-bold magic-hover" data-aos="fade-right" href="/contact">Contatti</a>
               <a class="btn btn-lg btn-secondary mt-4 text-uppercase text-white fw-bold magic-hover" data-aos="fade-left" href="/work">Il mio lavoro</a>
             </div>
