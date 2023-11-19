@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLogged" class="container-fluid min-vh-100 mt-5 p-0 bg-black mt-5">
+  <div v-if="!isLogged" class="container-fluid min-vh-100 mt-5 p-0 bg-black mt-5">
     <div class="row justify-content-center align-items-center">
       <div class="col-12">
         <h1 class="text-center fw-bold">Area riservata</h1>
@@ -22,30 +22,47 @@
     </div>
   </div>
   <div v-else class="container-fluid min-vh-100 mt-5 p-0 bg-black mt-5">
-    <div class="row justify-content-center align-items-center">
+    <div class="row justify-content-center align-items-center mb-5">
       <div class="col-12">
         <h1 class="text-center fw-bold">Messaggi ricevuti</h1>
       </div>
     </div>
-    <div class="row justify-content-center mt-5">
-      <div class="col-11 col-md-6 col-lg-4">
-
+    <div v-show="messages.length > 0" v-for="message in messages" :key="message.id" class="row justify-content-center">
+      <div class="col-11 col-md-6 col-lg-4 border-top border-bottom border-gray p-2">
+        <div class="d-flex justify-content-between">
+          <strong>{{ message.name }}<br><small class="text-gray">{{ message.email }}</small></strong><small>{{ message.date }}</small>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <span>{{ message.message }}</span>
+          <span @click="deleteMessage(message.id)" class="fs-5" style="cursor: pointer"><font-awesome-icon :icon="['far', 'trash-can']" /></span>
+        </div>
       </div>
-      <div class="text-center">
-        <button @click="logout" type="button" class="btn btn-danger text-uppercase fw-bold text-white my-5">Logout</button>
+    </div>
+    <div v-show="messages.length === 0" class="row justify-content-center">
+      <div class="col-12 text-center">
+        Nessun messaggio ricevuto
       </div>
+    </div>
+    <div class="text-center">
+      <button @click="logout" type="button" class="btn btn-danger text-uppercase fw-bold text-white my-5">Logout</button>
     </div>
   </div>
 </template>
 <script>
 // import axios from "axios";
 
+import axios from "axios";
+
 export default {
+  mounted() {
+    this.checkIfLogged();
+  },
   data() {
     return {
       username: "",
       password: "",
-      isLogged: false
+      isLogged: false,
+      messages: []
     }
   },
   methods: {
@@ -56,6 +73,7 @@ export default {
         this.username = "";
         this.password = "";
         this.isLogged = true;
+        this.getAllMessages();
       } else {
         alert("Credenziali errate!");
         this.username = "";
@@ -65,6 +83,49 @@ export default {
     logout: function () {
       localStorage.removeItem("admin");
       this.isLogged = false;
+    },
+    getAllMessages: function () {
+      axios.get('https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages.json').then(response => {
+        console.log("response messages", response);
+
+        if (response.data) {
+          let messagesArray = Object.entries(response.data).map(([id, messageData]) => {
+            // Aggiungi l'ID del messaggio ai dati del messaggio
+            messageData.id = id;
+            return messageData;
+          });
+
+          // Ordina i messaggi in modo che quelli più recenti vengano prima
+          messagesArray.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          // Converte la data in un formato leggibile
+          messagesArray.forEach(message => {
+            let date = new Date(message.date);
+            message.date = date.toLocaleString();
+          });
+
+          // Assegna l'array ordinato a this.messages
+          this.messages = messagesArray;
+          console.log("messaggi rifattorizzati", this.messages);
+        }
+      })
+    },
+    checkIfLogged: function () {
+      let isLogged = localStorage.getItem("admin");
+      isLogged ? this.isLogged = true : this.isLogged = false
+
+      if (isLogged) {
+        this.getAllMessages();
+      }
+    },
+    deleteMessage: function (messageId) {
+      if (confirm("Eliminare il messaggio?")) {
+        axios.delete(`https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages/${messageId}.json`).then(() => {
+          location.reload()
+        }).catch(() => {
+          alert("Impossibile eliminare il messaggio.")
+        })
+      }
     }
   }
 }
