@@ -20,16 +20,16 @@
             <form @submit.prevent="sendMessage" class="text-start">
               <div class="mb-3">
                 <label for="inputName" class="form-label">Nome o azienda</label>
-                <input v-model="name" type="text" class="form-control bg-dark text-white" id="inputName" required>
+                <input type="text" class="form-control bg-dark text-white" id="inputName" required>
               </div>
               <div class="mb-3">
                 <label for="inputEmail" class="form-label">Email</label>
-                <input v-model="email" type="email" class="form-control bg-dark text-white" id="inputEmail" aria-describedby="emailHelp">
+                <input type="email" class="form-control bg-dark text-white" id="inputEmail" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text text-white">Non condividerò nè salvero la tua email</div>
               </div>
               <div class="mb-3">
                 <label for="inputName" class="form-label">Messaggio</label>
-                <textarea v-model="message" name="text" id="text" rows="10" class="form-control bg-dark text-white" required></textarea>
+                <textarea name="text" id="inputMessage" rows="10" class="form-control bg-dark text-white" required></textarea>
               </div>
               <div class="mb-5 form-check">
                 <input type="checkbox" class="form-check-input" id="privacy" required>
@@ -95,9 +95,12 @@ export default {
   methods: {
     sendMessage: function () {
       let postData = {
-        name: this.name,
-        email: this.email,
-        message: this.message,
+        // name: this.name,
+        // email: this.email,
+        // message: this.message,
+        name: document.getElementById('inputName').value,
+        email: document.getElementById('inputEmail').value,
+        message: document.getElementById('inputMessage').value,
         date: new Date().toISOString()
       }
       console.log("message to send", postData);
@@ -109,6 +112,10 @@ export default {
             this.name = "";
             this.email = "";
             this.message = "";
+
+            document.getElementById('inputName').value = '';
+            document.getElementById('inputEmail').value = '';
+            document.getElementById('inputMessage').value = '';
           })
           .catch(error => {
             console.log(error)
