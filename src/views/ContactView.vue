@@ -87,13 +87,11 @@ export default {
   mounted() {
     console.log("data variables", [this.name, this.email, this.message]);
   },
-  data() {
-    return {
-      name: "",
-      email: "",
-      message: ""
-    }
-  },
+  data: () => ({
+    name: "",
+    email: "",
+    message: ""
+  }),
   methods: {
     sendMessage: function () {
       let postData = {
