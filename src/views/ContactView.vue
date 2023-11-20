@@ -84,6 +84,9 @@ import Home3DComponent from "@/components/Home3DComponent.vue";
 import axios from "axios";
 
 export default {
+  mounted() {
+    console.log("data variables", [this.name, this.email, this.message]);
+  },
   data() {
     return {
       name: "",
