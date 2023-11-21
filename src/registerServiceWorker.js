@@ -31,3 +31,20 @@ if (process.env.NODE_ENV === 'production') {
     }
   })
 }
+
+self.addEventListener('install', function(event) {
+  console.log("Installation event", event)
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(self.clients.claim());
+});
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+      fetch(event.request).catch(function() {
+        return self.cache.match(event.request);
+      })
+  );
+});
