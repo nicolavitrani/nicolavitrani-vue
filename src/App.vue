@@ -77,6 +77,8 @@ export default {
           })
           window.location.reload();
           // window.location.href = window.location.href.split('?')[0] + '?v=' + new Date().getTime();
+        } else {
+          console.log("No cache to clean.");
         }
       });
     }
