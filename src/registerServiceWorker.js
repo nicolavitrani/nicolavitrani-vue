@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
     },
     updated () {
       console.log('New content is available; please refresh.');
-      window.location.reload(true)
+      window.location.href = window.location.href.split('?')[0] + '?v=' + new Date().getTime();
     },
     offline () {
       console.log('No internet connection found. App is running in offline mode.')
@@ -31,20 +31,3 @@ if (process.env.NODE_ENV === 'production') {
     }
   })
 }
-
-self.addEventListener('install', function(event) {
-  console.log("Installation event", event)
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', function(event) {
-  event.waitUntil(self.clients.claim());
-});
-
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-      fetch(event.request).catch(function() {
-        return self.cache.match(event.request);
-      })
-  );
-});

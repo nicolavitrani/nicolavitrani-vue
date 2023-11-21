@@ -66,6 +66,31 @@ export default {
     }
   },
   mounted() {
+    if ('serviceWorker' in navigator) {
+      // Ascolta l'evento 'controllerchange' che viene attivato quando il service worker cambia
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        // Se il service worker cambia, esegui un hard refresh
+        if (this.refreshing) return;
+        this.refreshing = true;
+        window.location.href = window.location.href.split('?')[0] + '?v=' + new Date().getTime();
+      });
+
+      // Registra il service worker
+      navigator.serviceWorker.register('/service-worker.js').then(reg => {
+        reg.addEventListener('updatefound', () => {
+          // Se viene trovato un aggiornamento, imposta il nuovo service worker
+          const newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            // Se lo stato del nuovo service worker diventa 'installed', controlla se è il primo service worker
+            // o se c'è già un service worker. Se c'è già un service worker, significa che abbiamo un aggiornamento
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // Informa il service worker che abbiamo un aggiornamento
+              newWorker.postMessage({ action: 'skipWaiting' });
+            }
+          });
+        });
+      });
+    }
     window.addEventListener('scroll', this.checkScroll);
   },
   beforeUnmount() {
