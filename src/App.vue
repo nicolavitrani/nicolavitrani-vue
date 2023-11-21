@@ -66,6 +66,16 @@ export default {
     }
   },
   mounted() {
+    if ('caches' in window) {
+      // Ottieni tutte le chiavi nella cache
+      window.caches.keys().then(keys => {
+        // Se ci sono chiavi nella cache, esegui un hard refresh
+        if (keys.length > 0) {
+          alert("Sono disponibili aggiornamenti")
+          window.location.href = window.location.href.split('?')[0] + '?v=' + new Date().getTime();
+        }
+      });
+    }
     window.addEventListener('scroll', this.checkScroll);
   },
   beforeUnmount() {
