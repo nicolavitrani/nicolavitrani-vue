@@ -21,7 +21,7 @@ AOS.init({
 });
 
 const options = {
-    "cursorOuter": "circle-basic",
+    // "cursorOuter": "circle-basic",
     "hoverEffect": "circle-move",
     "hoverItemMove": false,
     "defaultCursor": false,
