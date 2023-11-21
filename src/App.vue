@@ -71,8 +71,12 @@ export default {
       window.caches.keys().then(keys => {
         // Se ci sono chiavi nella cache, esegui un hard refresh
         if (keys.length > 0) {
-          alert("Sono disponibili aggiornamenti")
-          window.location.href = window.location.href.split('?')[0] + '?v=' + new Date().getTime();
+          console.log("Keys from caches storage", keys);
+          keys.forEach(key => {
+            window.caches.delete(key)
+          })
+          window.location.reload();
+          // window.location.href = window.location.href.split('?')[0] + '?v=' + new Date().getTime();
         }
       });
     }
