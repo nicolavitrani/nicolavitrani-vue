@@ -24,8 +24,14 @@ export default {
     const container = this.$refs.container;
     canvas.style.width = '100%';
     canvas.style.height = '100%';
+    canvas.style.opacity = 0;
+    canvas.style.transition = 'opacity 2s';
 
     container.appendChild(canvas);
+
+    setTimeout(() => {
+      canvas.style.opacity = 1;
+    }, 400);
 
     const loader = new GLTFLoader()
     const modelPath = '/img/3d-obj/Asteroid.glb'
@@ -93,4 +99,13 @@ export default {
   #container {
     background: transparent;
   }
+
+.fade-in {
+  animation: fadein 2s; /* Durata dell'animazione: 2 secondi */
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 </style>
