@@ -2,16 +2,16 @@
   <div class="container-fluid p-0">
     <div class="row justify-content-center align-items-center position-relative">
       <div class="col-12 canvas-container d-flex align-items-center">
-        <Home3DComponent></Home3DComponent>
+        <Work3DComponent></Work3DComponent>
       </div>
       <div class="row position-absolute align-items-center justify-content-center mt-5">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-4 mt-md-0">
           <div class="col-12">
-            <h1 class="fw-bold" data-aos="fade-down">
+            <h1 class="fw-bold">
               <span class="p-2">🎯 Le mie esperienze</span>
             </h1>
           </div>
-          <div class="col-12 col-md-8 col-lg-6 mt-5 mx-auto" data-aos="fade-up">
+          <div class="col-12 col-md-8 col-lg-6 mt-5 mx-auto">
             <p>
               Nel corso della mia carriera, ho avuto l’opportunità di lavorare in diversi settori. Ho iniziato come sviluppatore <strong class="text-primary">freelance</strong>, un ruolo che mi ha permesso di affinare le mie competenze tecniche e di lavorare su una varietà di progetti.
             </p>
@@ -75,7 +75,7 @@
   </div>
 </template>
 <script setup>
-import Home3DComponent from "@/components/Home3DComponent.vue";
+import Work3DComponent from "@/components/Work3DComponent.vue";
 </script>
 
 <style scoped>

@@ -3,14 +3,14 @@
     <div class="" style="margin-top: 250px"></div>
     <div class="row justify-content-center align-items-center position-relative mt-5">
       <div class="col-12 canvas-container d-flex align-items-center">
-        <Home3DComponent></Home3DComponent>
+        <Contact3DComponent></Contact3DComponent>
       </div>
       <div class="row position-absolute align-items-center justify-content-center my-5 min-vh-100">
         <div class="col-12 col-md-10 col-lg-8 text-center mt-5">
-          <h1 class="fw-bold" data-aos="fade-down">
+          <h1 class="fw-bold">
             <span class="p-2">💬 Lasciami un messaggio</span>
           </h1>
-          <p class="mt-5" data-aos="fade-up">
+          <p class="mt-5">
             Compila il form e ti risponderò il prima possibile
           </p>
           <div class="col-12 text-center my-5">
@@ -78,7 +78,7 @@
   </div>
 </template>
 <script setup>
-import Home3DComponent from "@/components/Home3DComponent.vue";
+import Contact3DComponent from "@/components/Contact3DComponent.vue";
 </script>
 <script>
 import axios from "axios";
