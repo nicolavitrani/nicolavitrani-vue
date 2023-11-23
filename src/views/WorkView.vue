@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="text-center">
-      <a class="btn btn-primary mt-3 fw-bold text-uppercase text-white" href="/contact">Contatti</a>
+      <router-link to="/contact"><button class="btn btn-lg btn-primary mt-4 me-2 text-uppercase text-white fw-bold magic-hover" data-aos="fade-right">Contatti</button></router-link>
     </div>
   </div>
 </template>

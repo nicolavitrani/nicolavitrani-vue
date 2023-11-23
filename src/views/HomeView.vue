@@ -13,8 +13,8 @@
             <div class="col text-center">
               <h1 class="fw-bold">🚀 Web Developer</h1>
               <p class="mt-3">Dedico la mia competenza e creatività a trasformare idee in realtà digitale, <br>offrendo soluzioni web su misura</p>
-              <a class="btn btn-lg btn-primary mt-4 me-2 text-uppercase text-white fw-bold magic-hover" data-aos="fade-right" href="/contact">Contatti</a>
-              <a class="btn btn-lg btn-secondary mt-4 text-uppercase text-white fw-bold magic-hover" data-aos="fade-left" href="/work">Il mio lavoro</a>
+              <router-link to="/contact"><button class="btn btn-lg btn-primary mt-4 me-2 text-uppercase text-white fw-bold magic-hover" data-aos="fade-right">Contatti</button></router-link>
+              <router-link to="/work"><button class="btn btn-lg btn-secondary mt-4 text-uppercase text-white fw-bold magic-hover" data-aos="fade-left">Il mio lavoro</button></router-link>
             </div>
           </div>
         </div>
