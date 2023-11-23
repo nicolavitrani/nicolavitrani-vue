@@ -81,8 +81,8 @@ export default {
     }
   },
   mounted() {
-    this.splashScreen();
     this.checkIfCleanCache();
+    this.splashScreen();
     window.addEventListener('scroll', this.checkScroll);
   },
   beforeUnmount() {
