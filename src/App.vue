@@ -50,7 +50,7 @@
         </div>
       </nav>
       <router-view/>
-      <button @click="scrollToTop" id="scrollButton" class="btn btn-lg btn-secondary" :class="{'disappear' : !showScrollButton}"><font-awesome-icon :icon="['fas', 'caret-up']" /></button>
+      <button @click="scrollToTop" id="scrollButton" class="btn btn-lg btn-secondary text-white fw-bold rounded-5" :class="{'disappear' : !showScrollButton}"><font-awesome-icon :icon="['fas', 'arrow-up']" beat /></button>
       <footer class="my-5">
         <div class="container">
           <div class="row justify-content-center align-items-center">
