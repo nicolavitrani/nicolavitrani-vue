@@ -63,6 +63,14 @@
 import About3DComponent from "@/components/About3DComponent.vue";
 </script>
 
+<script>
+export default {
+  mounted() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+</script>
+
 <style scoped>
 
 </style>

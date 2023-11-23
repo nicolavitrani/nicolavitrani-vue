@@ -78,6 +78,14 @@
 import Work3DComponent from "@/components/Work3DComponent.vue";
 </script>
 
+<script>
+export default {
+  mounted() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+</script>
+
 <style scoped>
 
 </style>

@@ -30,6 +30,9 @@ export default {
   name: 'HomeView',
   components: {
     'Home3DComponent' : Home3DComponent
+  },
+  mounted() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
 </script>

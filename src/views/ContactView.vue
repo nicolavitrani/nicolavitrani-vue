@@ -85,7 +85,7 @@ import axios from "axios";
 
 export default {
   mounted() {
-    console.log("data variables", [this.name, this.email, this.message]);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   },
   data: () => ({
     name: "",
