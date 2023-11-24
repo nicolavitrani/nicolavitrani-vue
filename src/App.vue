@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div v-else class="container-fluid p-0">
+  <div v-else class="container-fluid">
     <div class="row align-items-center min-vh-100">
       <div class="col-12">
         <div v-show="fixNavbar" style="height: 122px"></div>
