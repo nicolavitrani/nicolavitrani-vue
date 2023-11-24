@@ -19,7 +19,7 @@
       <nav id="navbar" class="navbar navbar-expand-lg p-3" :class="{ 'navbar-light' : isLight, 'navbar-dark' : !isLight, 'fixed-top' : fixNavbar, 'hided' : hideNavbar }">
         <div class="container-fluid">
           <router-link @click="closeNavbar" class="navbar-brand" to="/">
-            <img src="/img/logo/logo.png" alt="Logo ufficiale di Nicola Vitrani" class="img-fluid p-2" style="height: 80px"><span class="text-uppercase fw-bold ms-2">Nicola Vitrani</span>
+            <img src="/img/logo/logo.png" alt="Logo ufficiale di Nicola Vitrani" class="img-fluid p-2" style="height: 80px"><span class="text-uppercase fw-bold ms-2 navbar-title">Nicola Vitrani</span>
           </router-link>
           <button id="navbar-toggler" class="navbar-toggler border-0 rounded-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="toggler-icon top-bar"></span>

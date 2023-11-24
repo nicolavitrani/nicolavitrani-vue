@@ -148,3 +148,9 @@ body {
 .bg-black {
   background: linear-gradient(to bottom, transparent, black, transparent)!important;
 }
+
+@media (max-width: 768px) {
+  .navbar-title {
+    font-size: 0.9rem;
+  }
+}
