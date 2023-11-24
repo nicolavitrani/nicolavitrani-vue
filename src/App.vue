@@ -84,6 +84,7 @@ export default {
     this.checkIfCleanCache();
     this.splashScreen();
     window.addEventListener('scroll', this.checkScroll);
+    document.body.style.transform = "scale(0.99)"
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.checkScroll);
