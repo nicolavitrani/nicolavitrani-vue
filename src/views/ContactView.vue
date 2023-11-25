@@ -62,14 +62,18 @@
     <div class="row justify-content-between align-items-center my-5">
       <div class="col-12 d-flex col-md-8 col-lg-5 text-center my-4 mx-auto">
         <div class="mx-auto">
-          <a href="mailto:nicolavitrani93@gmail.com" class="text-secondary text-decoration-none"><img
-              src="/img/logo/gmail-logo.png" alt="Logo ufficiale di Gmail" class="img-fluid" style="height: 70px">
+          <a href="mailto:nicolavitrani93@gmail.com" class="text-secondary text-decoration-none">
+            <span class="display-1 text-white">
+              <font-awesome-icon :icon="['far', 'envelope']" bounce />
+            </span>
             <div class="mt-2">Manda Email</div>
           </a>
         </div>
         <div class="mx-auto">
-          <a href="https://www.linkedin.com/in/nicola-vitrani-205a2881/" target="_blank" class="text-secondary text-decoration-none"><img
-              src="/img/logo/linkedin-logo.png" alt="Logo ufficiale di Gmail" class="img-fluid" style="height: 70px">
+          <a href="https://www.linkedin.com/in/nicola-vitrani-205a2881/" target="_blank" class="text-secondary text-decoration-none">
+            <span class="display-1 text-white">
+              <font-awesome-icon :icon="['fab', 'linkedin']" beat />
+            </span>
             <div class="mt-2">Visita Linkedin</div>
           </a>
         </div>
