@@ -32,9 +32,13 @@
         <div class="col-12 col-md-4 text-center">
           <img src="/img/logo/deloitte-logo-light.png" alt="Logo ufficiale di Deloitte" class="img-fluid bg-white p-3 rounded mb-3" style="height: 120px">
         </div>
-        <div class="col-12 col-md-7 text-start px-3" data-aos="fade-down">
-          <h2 class="fw-bold mb-2">Deloitte</h2>
+        <div class="col-12 col-md-7 text-start px-3 mt-3 mt-lg-0" data-aos="fade-down">
+          <div class="d-flex">
+            <h2 class="fw-bold mb-2">Deloitte</h2>
+            <a href="https://www.deloitte.com" target="_blank" class="text-secondary ms-3 text-decoration-none fs-5"><font-awesome-icon :icon="['fas', 'up-right-from-square']" bounce /></a>
+          </div>
           <small class="text-gray">da Settembre 2023</small>
+          <h3 class="my-3 text-primary fs-5 fw-bold font-monospace">Full-stack web developer</h3>
           <div class="col-12 col-md-10">
             <p class="mt-4">
               Sto avendo l’opportunità di lavorare su una serie di progetti stimolanti e innovativi. La mia esperienza mi ha permesso di affinare le mie competenze tecniche e di problem solving, lavorando con un team di professionisti altamente qualificati.
@@ -46,6 +50,32 @@
               Questa esperienza mi ha fornito una solida base per la mia carriera e sono entusiasta di portare queste competenze e conoscenze nel mio prossimo ruolo.
             </p>
           </div>
+          <div class="col-12 col-md-10 mt-4 mb-3">
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Adobe Experience Manager
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              ReactJS
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Java
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              HTML
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              CSS
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Javascript
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Accessibilità
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Agile Management
+            </span>
+          </div>
         </div>
       </div>
       <div class="row align-items-center justify-content-between">
@@ -53,8 +83,12 @@
           <img src="/img/logo/tekna-logo.png" alt="Logo ufficiale di Tekna" class="img-fluid" style="height: 200px">
         </div>
         <div class="col-12 col-md-7 text-start px-3" data-aos="fade-up">
-          <h2 class="fw-bold mb-2">Tekna Automation & Energy</h2>
+          <div class="d-flex">
+            <h2 class="fw-bold mb-2">Tekna Automation & Energy</h2>
+            <a href="https://www.teknautomazione.it/" target="_blank" class="text-secondary ms-3 text-decoration-none fs-5"><font-awesome-icon :icon="['fas', 'up-right-from-square']" bounce /></a>
+          </div>
           <small class="text-gray">da Luglio 2021 ad Agosto 2023</small>
+          <h3 class="my-3 text-primary fs-5 fw-bold font-monospace">Full-stack web developer | Artificial Vision developer</h3>
           <div class="col-12 col-md-10">
             <p class="mt-4">
               Ho progettato e sviluppato una piattaforma web per la gestione di un robot utilizzato negli stabilimenti di produzione di pneumatici in tutto il mondo. La piattaforma, progettata per essere responsive e user-friendly, utilizza PHP con il framework Laravel per il backend e JavaScript con il framework Vue.js per il frontend. I dati sono gestiti attraverso un database relazionale MySQL.
@@ -65,6 +99,32 @@
             <p>
               Ho anche avuto l’opportunità di lavorare sulla manutenzione di software scritti in diversi linguaggi e tecnologie, tra cui .NET. Questa esperienza mi ha permesso di acquisire una vasta gamma di competenze e di approfondire la mia comprensione delle moderne tecnologie di sviluppo web.
             </p>
+          </div>
+          <div class="col-12 col-md-10 mt-4 mb-3">
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Laravel
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              VueJS
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              PHP
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              HTML
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              CSS
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Javascript
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              Halcon
+            </span>
+            <span class="btn btn-sm bg-secondary text-black border-secondary text-secondary rounded text-secondary mb-3 me-2" style="cursor: none;">
+              MySQL
+            </span>
           </div>
         </div>
       </div>
