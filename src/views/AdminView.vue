@@ -76,13 +76,47 @@ export default {
     login: function () {
       if (this.username === "nicolavitrani" && this.password === "enrica") {
         localStorage.setItem("admin", "true");
-        alert("Benvenuto!")
+
+        window.Swal.fire({
+          backdrop: `
+                  rgba(0,0,0,0.8)
+                `,
+          background: "black",
+          customClass: {
+            title: "text-white"
+          },
+          title: "Accesso eseguito",
+          text: "Benvenuto nell'area riservata",
+          icon: "success",
+          showCancelButton: false,
+          confirmButtonColor: "#54a0c2",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "OK"
+        });
+
         this.username = "";
         this.password = "";
         this.isLogged = true;
         this.getAllMessages();
       } else {
-        alert("Credenziali errate!");
+
+        window.Swal.fire({
+          backdrop: `
+                  rgba(0,0,0,0.8)
+                `,
+          background: "black",
+          customClass: {
+            title: "text-white"
+          },
+          title: "Ops!",
+          text: "Credenziali non corrette. Riprova",
+          icon: "error",
+          showCancelButton: false,
+          confirmButtonColor: "#54a0c2",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "OK"
+        });
+
         this.username = "";
         this.password = "";
       }
@@ -130,15 +164,65 @@ export default {
       }
     },
     deleteMessage: function (messageId) {
-      if (confirm("Eliminare il messaggio?")) {
-        axios.delete(`https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages/${messageId}.json`).then(() => {
-          this.loading = true;
-          this.getAllMessages();
-          this.loading = false;
-        }).catch(() => {
-          alert("Impossibile eliminare il messaggio.")
-        })
-      }
+      window.Swal.fire({
+        backdrop: `
+          rgba(0,0,0,0.8)
+        `,
+        background: "black",
+        customClass: {
+          title: "text-white"
+        },
+        title: "Conferma di eliminazione",
+        text: "Sei sicuro di voler eliminare il messaggio?",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#54a0c2",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si",
+        cancelButtonText: "No"
+      }).then(action => {
+        if (action.isConfirmed) {
+          axios.delete(`https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages/${messageId}.json`).then(() => {
+            this.loading = true;
+            this.getAllMessages();
+            this.loading = false;
+          }).then(() => {
+            window.Swal.fire({
+              backdrop: `
+                  rgba(0,0,0,0.8)
+                `,
+              background: "black",
+              customClass: {
+                title: "text-white"
+              },
+              title: "Eliminato",
+              text: "Messaggio eliminato con successo",
+              icon: "success",
+              showCancelButton: false,
+              confirmButtonColor: "#54a0c2",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "OK"
+            });
+          }).catch(() => {
+            window.Swal.fire({
+              backdrop: `
+                  rgba(0,0,0,0.8)
+                `,
+              background: "black",
+              customClass: {
+                title: "text-white"
+              },
+              title: "Ops!",
+              text: "Errore nella cancellazione del messaggio. Riprovare",
+              icon: "error",
+              showCancelButton: false,
+              confirmButtonColor: "#54a0c2",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "OK"
+            });
+          })
+        }
+      })
     }
   }
 }

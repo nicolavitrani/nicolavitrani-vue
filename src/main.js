@@ -13,7 +13,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { magicMouse } from 'magicmouse.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Swal from 'sweetalert2';
 
+window.Swal = Swal;
 AOS.init({
     duration: 1000, // values from 0 to 3000, with step 50ms
     once: false, // whether animation should happen only once - while scrolling down

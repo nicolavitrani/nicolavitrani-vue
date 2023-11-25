@@ -98,33 +98,80 @@ export default {
   }),
   methods: {
     sendMessage: function () {
-      let postData = {
-        // name: this.name,
-        // email: this.email,
-        // message: this.message,
-        name: document.getElementById('inputName').value,
-        email: document.getElementById('inputEmail').value,
-        message: document.getElementById('inputMessage').value,
-        date: new Date().toISOString()
-      }
-      console.log("message to send", postData);
-      axios.post('https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages.json', postData)
-          .then(response => {
-            console.log(response.data)
-            alert('Grazie, ti risponderò a breve!')
+      window.Swal.fire({
+        backdrop: `
+          rgba(0,0,0,0.8)
+        `,
+        background: "black",
+        customClass: {
+          title: "text-white"
+        },
+        title: "Conferma invio messaggio",
+        text: "Sei sicuro di voler mandare il messaggio?",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#54a0c2",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si",
+        cancelButtonText: "No"
+      }).then(action => {
+        if (action.isConfirmed) {
+          let postData = {
+            name: document.getElementById('inputName').value,
+            email: document.getElementById('inputEmail').value,
+            message: document.getElementById('inputMessage').value,
+            date: new Date().toISOString()
+          }
+          axios.post('https://nicolavitrani-a4783-default-rtdb.europe-west1.firebasedatabase.app/messages.json', postData)
+            .then(response => {
+              console.log(response.data);
 
-            this.name = "";
-            this.email = "";
-            this.message = "";
+              window.Swal.fire({
+                backdrop: `
+                  rgba(0,0,0,0.8)
+                `,
+                background: "black",
+                customClass: {
+                  title: "text-white"
+                },
+                title: "Grazie",
+                text: "Ti risponderò a breve",
+                icon: "success",
+                showCancelButton: false,
+                confirmButtonColor: "#54a0c2",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "OK"
+              });
 
-            document.getElementById('inputName').value = '';
-            document.getElementById('inputEmail').value = '';
-            document.getElementById('inputMessage').value = '';
-          })
-          .catch(error => {
-            console.log(error)
-            alert('Errore nella richiesta!')
-          })
+              this.name = "";
+              this.email = "";
+              this.message = "";
+
+              document.getElementById('inputName').value = '';
+              document.getElementById('inputEmail').value = '';
+              document.getElementById('inputMessage').value = '';
+            })
+            .catch((err) => {
+              console.log("Error sending message", err);
+              window.Swal.fire({
+                backdrop: `
+                  rgba(0,0,0,0.8)
+                `,
+                background: "black",
+                customClass: {
+                  title: "text-white"
+                },
+                title: "Ops!",
+                text: "Errore nell'invio del messaggio. Contattami via email",
+                icon: "error",
+                showCancelButton: false,
+                confirmButtonColor: "#54a0c2",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "OK"
+              });
+            })
+        }
+      });
     }
   }
 }
